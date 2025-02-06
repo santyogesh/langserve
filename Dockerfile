@@ -17,10 +17,10 @@ COPY ./app ./app
 RUN poetry install --no-interaction --no-ansi
 
 # Dockerfile
+. . .
 
-
-EXPOSE 8000 
-RUN exec uvicorn app.server:app --host 0.0.0.0 --port 8000 
+EXPOSE 8000 // [!code --]
+RUN exec uvicorn app.server:app --host 0.0.0.0 --port 8000 // [!code --]
 ARG PORT // [!code ++]
-EXPOSE ${PORT:-8000} 
+EXPOSE ${PORT:-8000} // [!code ++]
 RUN exec uvicorn app.server:app --host 0.0.0.0 --port ${PORT:-8000} // [!code ++]
