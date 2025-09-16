@@ -72,6 +72,9 @@ In the below example, we inject the `OPENAI_API_KEY` environment
 variable with the value set in my local environment
 (`$OPENAI_API_KEY`)
 
+
+
+
 We also expose port 8080 with the `-p 8080:8080` option.
 
 ```shell
